@@ -1,0 +1,108 @@
+<!--Form Starting-->
+<br><div style="margin-left:300px;"><div class="card" style="width: 25rem;">
+<form class="text-center border border-light p-5" 
+(ngSubmit)="save()"
+ novalidate
+ [formGroup]="registerForm">
+
+    <img src="https://www.seoclerk.com/pics/562779-23ip3U1526728451.jpg" style="width:150px;">
+
+    <!--Name-->
+    <input type="text"
+     id="firstName" 
+     class="form-control mb-4"
+      placeholder="Name"
+      required
+      minlength="3"
+      formControlName="firstName"
+      [ngClass]="{'is-invalid':(registerForm.get('firstName').touched || registerForm.get('firstName').dirty) && !registerForm.get('firstName').valid }">
+        <span class="invalid-feedback">
+          <span *ngIf="registerForm.get('firstName').errors?.required">
+            Please Enter Your First Name
+          </span>
+          <span *ngIf="registerForm.get('firstName').errors?.minlength">
+            First Name Should have 3 Character
+          </span>
+        </span>
+     
+<!--Username-->
+        <input type="text" id="userName"
+     class="form-control mb-4" placeholder="UserName"
+     required minlength="3"
+     formControlName='userName'
+     [ngClass]="{'is-invalid':(registerForm.get('userName').touched || registerForm.get('userName').dirty) && !registerForm.get('userName').valid}">
+        <span class="invalid-feedback">
+          <span *ngIf="registerForm.get('userName').errors?.required">
+            Please Enter Your User Name
+          </span>
+          <span *ngIf="registerForm.get('userName').errors?.minlength">
+            Username Should have atlest 3 Character
+          </span>
+        </span>
+<!--Password-->
+      <input type="password" class="form-control mb-4" 
+      id="password"
+      name="password"
+      placeholder="Password"
+      formControlName="password"
+      required 
+      minlength="3"
+      [ngClass]="{'is-invalid':(registerForm.get('password').touched || registerForm.get('password').dirty) && !registerForm.get('password').valid}">
+        <span class="invalid-feedback">
+          <span *ngIf="registerForm.get('password').errors?.required">
+            Please enter Password
+          </span>
+          <span *ngIf="registerForm.get('password').errors?.minlength">
+            Password Should have 3 Character
+          </span>
+          
+        </span>
+
+        <!--Confirm Password-->
+        <input type="password" class="form-control mb-4"
+        placeholder="Confirm Password"
+        id="confirm"
+        required 
+        minlength="3"
+        formControlName="confirm"
+        [ngClass]="{'is-invalid':(registerForm.get('confirm').touched || registerForm.get('confirm').dirty) && !registerForm.get('confirm').valid}">
+          <span class="invalid-feedback">
+            <span *ngIf="registerForm.get('confirm').errors?.required">
+              Please Confirm Your Password
+            </span>
+            <span *ngIf="registerForm.get('confirm').errors?.minlength">
+                Password Should have 3 Character
+              </span>
+          </span>
+
+          <label class="form-check-label">
+        <input type="checkbox" class="form-check-input"
+        id="sendNewCourseMail"
+        name="sendNewCourseMail"
+         formControlName="sendNewCourseMail">Send New Course Release Mails</label>
+
+         <div *ngIf="sendNewCourseMail">
+            <label class="form-check-label">  
+          <input type="password" class="form-control mb-4"
+        placeholder="@Email"
+        id="email"
+        formControlName="email">Email</label>
+        
+         </div>
+
+  <br>        <button class="btn btn-primary mr-3"
+          type="submit"
+          style="width:90px"
+          [title]="registerForm.valid ? 'Save your entered data' : 'Disabled until the form data is valid'"
+          [disabled]="!registerForm.valid">
+    Register
+  </button>
+
+</form>
+</div>
+</div>
+<br>Dirty:{{registerForm.dirty}}
+<br>Touched:{{registerForm.touched}}
+<br>Valid:{{registerForm.valid}}
+<br>Pristine:{{registerForm.pristine}}
+<br>Values:{{registerForm.value |json}}

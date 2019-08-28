@@ -1,0 +1,36 @@
+<br><div style="margin-left:300px;"><div class="card" style="width: 25rem;">
+<form class="text-center border border-light p-5" 
+(ngSubmit)="save(loginForm)"
+ novalidate
+ #loginForm="ngForm">
+    <img src="https://www.marketingstrategizers.com/files/contact-3.jpg" style="width:200px;">
+
+    <!--UserName-->
+    <input type="text"
+     id="firstName" 
+     class="form-control mb-4"
+      placeholder="Email Id"
+      required
+      [(ngModel)]="contactus.email"
+      name="email">
+       
+
+        <textarea
+        class="form-control mb-4"
+        placeholder="Message"
+        id="password"
+        required
+        [(ngModel)]="contactus.message"
+        name="password"></textarea>
+       
+
+        <button class="btn btn-primary mr-3"
+        type="submit"
+         style="width:100px"
+               [title]="loginForm.valid ? 'Save your entered data' : 'Disabled until the form data is valid'"
+              [disabled]="!loginForm.valid">
+                    Send Message
+            </button>
+</form>
+            </div><br>
+            

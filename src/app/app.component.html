@@ -1,0 +1,143 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+<!--Navigation bar-->
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <a id='code' class="navbar-brand" [routerLink]="['/front']"><i class="fa fa-creative-commons"></i><strong>Code-Course</strong></a>
+    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav">
+          
+           
+
+     <div class="dropdown">
+  <button class="dropbtn">Category</button>
+  <div class="dropdown-content">
+    <a [routerLink]="['/courselist']">Desktop</a>
+    <a [routerLink]="['/courselist']">Database</a>
+    <a [routerLink]="['/courselist']">Android</a>
+    <a [routerLink]="['/courselist']">Data Science</a>
+    <a [routerLink]="['/courselist']">Web</a>
+
+  </div>
+</div>
+
+
+        </div>
+        <form class="form-inline ml-auto">
+            <input type="text" class="form-control mr-sm-2" placeholder="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit"  [routerLink]="['/courselist']"><i class="fa fa-search"></i></button>
+        </form>
+        <div class="navbar-nav">
+           <button class="btn btn-outline-success my-2 my-sm-0" type="submit" [routerLink]="['/login']">Login</button>
+        </div>
+        <div class="navbar-nav">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit" [routerLink]="['/register']">Register</button>
+         </div>
+    </div>
+</nav>
+
+<div>
+<router-outlet></router-outlet>
+</div>
+
+
+<!-- Footer -->
+<footer class="page-footer font-small mdb-color lighten-3 pt-4" style="background-color:lightblue;">
+
+  <!-- Footer Links -->
+  <div class="container text-center text-md-left">
+
+    <!-- Grid row -->
+    <div class="row">
+
+      <!-- Grid column -->
+      <div class="col-md-4 col-lg-3 mr-auto my-md-4 my-0 mt-4 mb-1">
+
+        <!-- Content -->
+        <h5 class="font-weight-bold text-uppercase mb-4"><i class="fa fa-creative-commons"></i>Code-Course</h5>
+        <p>Anywhere, anytime. Enjoy risk-free with our 30-day, money-back guarantee.
+The world’s largest selection of courses Choose from over 100,000 online video courses with new additions published every month</p>
+
+      </div>
+      <!-- Grid column -->
+
+      <hr class="clearfix w-100 d-md-none">
+
+      <!-- Grid column -->
+      <div class="col-md-2 col-lg-2 mx-auto my-md-4 my-0 mt-4 mb-1">
+
+        <!-- Links -->
+        <h5 class="font-weight-bold text-uppercase mb-4">About</h5>
+
+        <ul class="list-unstyled">
+          <li>
+            <p>
+              <a [routerLink]="['/error']">COURSES</a>
+            </p>
+          </li>
+          <li>
+            <p>
+              <a [routerLink]="['/about']">ABOUT US</a>
+            </p>
+          </li>
+
+          <li>
+            <p>
+              <a [routerLink]="['/contactus']">CONTACT US</a>
+            </p>
+          </li>
+          
+        </ul>
+
+      </div>
+      <!-- Grid column -->
+
+      <hr class="clearfix w-100 d-md-none">
+
+      <!-- Grid column -->
+      <div class="col-md-4 col-lg-3 mx-auto my-md-4 my-0 mt-4 mb-1">
+
+        <!-- Contact details -->
+        <h5 class="font-weight-bold text-uppercase mb-4">Address</h5>
+
+        <ul class="list-unstyled">
+          <li>
+            <p>
+              <i class="fas fa-home mr-3"></i> Bangalore</p>
+          </li>
+          <li>
+            <p>
+              <i class="fas fa-envelope mr-3"></i> code@course.com</p>
+          </li>
+          <li>
+            <p>
+              <i class="fas fa-phone mr-3"></i> +91 xxxxx xxxxx</p>
+          </li>
+          <li>
+            <p>
+              <i class="fas fa-print mr-3"></i> +91 xxxxx xxxxx</p>
+          </li>
+        </ul>
+
+      </div>
+    
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row -->
+
+  </div>
+  <!-- Footer Links -->
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">&copy;  2018 Copyright:
+    <a [routerLink]="['/front']"> <b><i class="fa fa-creative-commons"></i>Code-Course</b></a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+

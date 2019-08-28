@@ -1,0 +1,59 @@
+
+<!--Carosel-->
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+        <img src="https://ontargetwebdesign.net/images/assets/programming.jpg" class="d-block w-100" alt="...">
+    </div>
+  </div>
+
+<div class="jumbotron">
+  <h1 class="display-4"><i class="fa fa-creative-commons"></i>Code-course</h1>
+  <p class="lead">Anywhere, anytime. Enjoy risk-free with our 30-day, money-back guarantee.<br>
+      The world’s largest selection of courses
+Choose from over 100,000 online video courses with new additions published every month</p>
+  <hr class="my-4">
+  <p></p>
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" [routerLink]="['/about']" >Learn more <i class="fa fa-leanpub"></i></a>
+  </p>
+</div>
+<h3>Popular Courses</h3>
+<a style="margin-left:1000px;margin-bottom:10px;" class="btn btn-outline-primary" [routerLink]="['/courselist']"><i class="fa fa-wpexplorer"></i>Explore More</a>
+<div class="row" style="width:1000px">
+  <div class="col-sm-6">
+    <div class="card">
+         <img class="card-img-top" src="https://www.valuecoders.com/blog/wp-content/uploads/2018/05/pythonfeatured.jpg" alt="Card image cap" style="height:200px;">
+      <div class="card-body">
+       <a href="" [routerLink]="['/courselist']" ><strong><i class="fa fa-book"></i>Python</strong></a>
+        <p class="card-text"><strong>This course includes</strong></p><br>
+<ul>
+<li>24 hours on-demand video</li><br>
+<li>19 articles</li><br>
+<li>19 coding exercises</li><br>
+<li>Full lifetime access</li><br>
+<li>Access on mobile and TV</li><br>
+<li>Certificate of Completion</li></ul>
+<a [routerLink]="['/buynow']" class="btn btn-primary">Buy Now</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+        <img class="card-img-top" src="https://miro.medium.com/max/1200/1*EPBoypOrvhDGsJySTjs0fw.jpeg" alt="Card image cap">
+      <div class="card-body">
+        <a href="" [routerLink]="['/courselist']" ><strong><i class="fa fa-book"></i>JAVA</strong></a>
+        <p class="card-text"><strong>This course includes</strong></p><br>
+<ul>
+<li>24 hours on-demand video</li><br>
+<li>19 articles</li><br>
+<li>19 coding exercises</li><br>
+<li>Full lifetime access</li><br>
+<li>Access on mobile and TV</li><br>
+<li>Certificate of Completion</li></ul>
+<a [routerLink]="['/buynow']" class="btn btn-primary">Buy Now</a>
+      </div>
+    </div>
+  </div>
+</div>
+

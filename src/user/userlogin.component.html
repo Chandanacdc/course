@@ -1,0 +1,93 @@
+<br><div style="margin-left:300px;"><div class="card" style="width: 25rem;">
+<form class="text-center border border-light p-5" 
+(ngSubmit)="save(loginForm)"
+ novalidate
+ #loginForm="ngForm">
+    <img src="https://png.pngtree.com/svg/20161229/e7a5cf5c9e.png" alt="..." style="width:80px;">
+    <h5 class="card-header">Login</h5>
+
+    <!--UserName-->
+    <input type="text"
+     id="firstName" 
+     class="form-control mb-4"
+      placeholder="UserName"
+      required
+      [(ngModel)]="login.username"
+      name="username"
+      #userNameVar="ngModel"
+      [ngClass]="{'is-invalid':(userNameVar.touched || userNameVar.dirty) && !userNameVar.valid }">
+        <span class="invalid-feedback">
+          <span *ngIf="userNameVar.errors?.required">
+            Please Enter UserName
+          </span>
+        </span>
+
+        <input type="password"
+        class="form-control mb-4"
+        placeholder="Password"
+        id="password"
+        required
+        [(ngModel)]="login.password"
+        name="password"
+        #passwordVar="ngModel"
+        [ngClass]="{'is-invalid':(passwordVar.touched || passwordVar.dirty) && !passwordVar.valid}">
+        <span class="invalid-feedback">
+          <span *ngIf="passwordVar.errors?.required">
+            Please Enter Password
+          </span>
+        </span>
+
+        <div>
+        <input type="checkbox" name="newsletter"
+        id="newsletter"
+        [(ngModel)]='login.newsletter'><label>Subscribe to our Newsletter</label>
+          </div>
+
+          <div *ngIf="login.newsletter">
+            <input type="email" id="email"
+            name="email" required
+            class="form-control mb-4"
+            placeholder="email"
+            [(ngModel)]='login.email'
+            #emailVar='ngModel'
+            [ngClass]="{'is-invalid':(emailVar.touched || emailVar.dirty) && !emailVar.valid}"/>
+            <span class="invalid-feedback">
+              <span *ngIf="emailVar.errors?.required">
+                Please Enter Your Email Id
+              </span>
+            </span>
+            
+            <input type="number" required
+            placeholder="Phone Numeber"
+            name="phone" id="phone"
+            class="form-control mb-4"
+            minlength="10"
+            maxlength="10"
+            [(ngModel)]="login.phone"
+            #phoneVar="ngModel"
+            [ngClass]="{'is-invalid':(phoneVar.touched || phoneVar.dirty) && !phoneVar.valid}"/>
+            <span class="invalid-feedback">
+              <span *ngIf="phoneVar.errors?.required">
+                Please Enter Your Phone Number
+              </span>
+              <span *ngIf="phoneVar.errors?.minlength">
+                Please Enter 10 Digit Number
+              </span>
+              <span *ngIf="phoneVar.errors?.maxlength">
+                Please Enter 10 Digit Number
+              </span>
+              </span>
+
+          </div>
+
+        <button class="btn btn-primary mr-3"
+        type="submit"
+         style="width:80px"
+               [title]="loginForm.valid ? 'Save your entered data' : 'Disabled until the form data is valid'"
+              [disabled]="!loginForm.valid">
+                    Login
+            </button> 
+            <a [routerLink]="['/register']">New user?</a>
+</form>
+            </div><br>
+            

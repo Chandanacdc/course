@@ -1,0 +1,43 @@
+
+<a  class="btn btn-outline-primary" href="javascript:void(0)" (click)="goBack()"><i class="fa fa-backward"></i> Go back </a>
+<br><br><br>
+<h1>{{title}}</h1>
+<img src="https://learn.libraryjournal.com/wp-content/uploads/2016/10/CodeYourLibrary.png" style="height:300px;width:600px; margin-left:300px;"/><br><br>
+
+<div class="container">
+  <div class="row">
+    <div class="search-hero">
+      <input class="form-control" type="text" name="search" [(ngModel)]="courseSearch" autocomplete="off" placeholder="&#61442;  Start searching ">
+    </div>
+    <table class="table table-striped" *ngIf="courselist && courselist.length">
+      <thead>
+      <tr>
+         <th><button class="btn btn-primary"
+         (click)='switchimg()'>
+          {{showImg?'Hide':'Show'}}Images</button></th>
+        <th>Course Name</th>
+        <th>Mentor Name</th>
+        <th>Category</th>
+        <th>Course Price</th>
+        <th>Course rating</th>
+        <th>Stars</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let course of searchedCourse">
+        <td><img *ngIf="showImg" [src]='course.courseImg'
+      [style.width.px]='imgWidth'
+      [style.height.px]='imgHeight'
+       /></td>
+         <td><a [routerLink]="['/courselist',course.courseId]">{{course.courseName}}</a></td>
+        <td>{{course.Mentor}}</td>
+        <td>{{course.category}}</td>
+        <td>{{course.coursePrice | currency}}</td>
+        <td>{{course.courseRating}}</td>
+        <td><rating [rating]='course.courseRating'
+        (ratingClick)='onRatingClicked($event)'></rating></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,120 @@
+<br><div style="margin-left:300px;"><div class="card" style="width: 25rem;">
+<form class="text-center border border-light p-5" 
+(ngSubmit)="save(buyForm)"
+ novalidate
+ #buyForm="ngForm">
+   
+    <h5 class="card-header">Buy Now</h5>
+
+    <!--UserName-->
+    <input type="text"
+     id="name" 
+     class="form-control mb-4"
+      placeholder="Name"
+      required
+      [(ngModel)]="buynow.name"
+      name="name"
+      #userNameVar="ngModel"
+      [ngClass]="{'is-invalid':(userNameVar.touched || userNameVar.dirty)}">
+        <span class="invalid-feedback">
+          <span *ngIf="userNameVar.errors?.required">
+            Please Enter Name
+          </span>
+        </span>
+
+        <input type="email"
+        class="form-control mb-4"
+        placeholder="Email"
+        id="Email"
+        required 
+        [(ngModel)]="buynow.email"
+        name="email"
+        #emailVar="ngModel"
+        [ngClass]="{'is-invalid':(emailVar.touched || emailVar.dirty)}">
+        <span class="invalid-feedback">
+          <span *ngIf="emailVar.errors?.required">
+            Please Enter Email Id
+          </span>
+        </span>
+
+        <div>
+        <input type="checkbox" name="payment"  class="form-check-input"
+        id="netbanking"
+        [(ngModel)]='buynow.netbanking'><label>Net Banking</label>
+          </div>
+
+           <div>
+        <input type="checkbox" name="payment"  class="form-check-input"
+        id="creditcard"
+        [(ngModel)]='buynow.creditcard'><label>Credit Card</label>
+          </div>
+
+          <div>
+        <input type="checkbox" name="payment"  class="form-check-input"
+        id="debitcard"
+        [(ngModel)]='buynow.debitcard'><label>Debit Card</label>
+          </div><br>
+
+          <div *ngIf="buynow.netbanking">
+           <select [(ngModel)]="selectbank" class="form-control form-control-lg">
+             <option>Select Bank</option>
+             <option>SBI</option>
+             <option>OBC</option>
+             <option>Axis</option>
+             <option>HDFC</option>
+             </select>
+          </div><br>
+
+          <div *ngIf="buynow.creditcard">
+            <input type="text" name="cardnumber" id="cardnumber" class="form-control"
+            required placeholder="Card Number"
+            [(ngModel)]="buynow.cardNumber"><br>
+
+            <input type="text" name="cardholdername" id="cardholdername" class="form-control"
+            required placeholder="Card Holder Name"
+            [(ngModel)]="buynow.cardName"><br>
+
+            <input type="text" name="cvv" id="cvv" class="form-group col-md-3"
+            required placeholder="cvv"
+            [(ngModel)]="buynow.cvv"><br>
+
+            <input type="date" name="expirydate" id="expirydate"
+            required placeholder="Card expirydate"
+            [(ngModel)]="buynow.expirydate"><br>
+
+          </div>
+
+           <div *ngIf="buynow.debitcard">
+            <input type="text" name="cardnumber" id="cardnumber" class="form-control"
+            required placeholder="Card Number"
+            [(ngModel)]="buynow.cardNumber"><br>
+
+            <input type="text" name="cardholdername" id="cardholdername" class="form-control"
+            required placeholder="Card Holder Name"
+            [(ngModel)]="buynow.cardName"><br>
+
+            <input type="text" name="cvv" id="cvv" class="form-group col-md-3"
+            required placeholder="cvv"
+            [(ngModel)]="buynow.cvv"><br>
+
+            <input type="date" name="expirydate" id="expirydate"
+            required placeholder="Card expirydate"
+            [(ngModel)]="buynow.expirydate"><br>
+
+          </div>
+
+
+          
+
+        <button class="btn btn-primary mr-3"
+        type="submit"
+         style="width:100px"
+               [title]="buyForm.valid ? 'Save your entered data' : 'Disabled until the form data is valid'"
+              [disabled]="!buyForm.valid">
+                    Buy Now
+            </button>
+</form>
+            </div><br>
+
+            
+            
